@@ -17,6 +17,7 @@ const login = async (req, res) => {
       let checkPass = bcrypt.compareSync(pass, data.mat_khau);
       if (checkPass) {
         let payload = {
+          nguoi_dung_id: data.nguoi_dung_id,
           email: data.email,
         };
         let token = createToken(payload);
