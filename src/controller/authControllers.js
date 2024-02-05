@@ -5,6 +5,7 @@ import { createToken } from "../config/jwt.js";
 const prisma = new PrismaClient();
 
 const login = async (req, res) => {
+  // login
   try {
     let { email, pass } = req.body;
     let data = await prisma.nguoi_dung.findFirst({
