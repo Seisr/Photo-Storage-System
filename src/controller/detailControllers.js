@@ -17,4 +17,19 @@ const getInfoImage = async (req, res) => {
   }
 };
 
-export { getInfoImage };
+const getInfoComment = async (req, res) => {
+  try {
+    let { imgId } = req.params;
+    let imgId2 = Number(imgId);
+    let data = await prisma.binh_luan.findMany({
+      where: {
+        hinh_id: imgId2,
+      },
+    });
+    res.send(data);
+  } catch (e) {
+    res.send(`getInfoComment error ${e}`);
+  }
+};
+
+export { getInfoImage, getInfoComment };
