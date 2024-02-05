@@ -32,4 +32,19 @@ const getInfoComment = async (req, res) => {
   }
 };
 
-export { getInfoImage, getInfoComment };
+const getImgIsSaved = async (req, res) => {
+  try {
+    let { imgId } = req.params;
+    let imgId2 = Number(imgId);
+    let data = await prisma.luu_anh.findMany({
+      where: {
+        hinh_id: imgId2,
+      },
+    });
+    res.send(data);
+  } catch (e) {
+    res.send(`getImgIsSaved error ${e}`);
+  }
+};
+
+export { getInfoImage, getInfoComment, getImgIsSaved };
