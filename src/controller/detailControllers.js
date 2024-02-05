@@ -47,4 +47,23 @@ const getImgIsSaved = async (req, res) => {
   }
 };
 
-export { getInfoImage, getInfoComment, getImgIsSaved };
+const saveComment = async (req, res) => {
+  try {
+    let { nguoi_dung_id, hinh_id, ngay_binh_luan, noi_dung } = req.body;
+    let ngay_binh_luan2 = new Date(ngay_binh_luan).toISOString();
+    let newComment = {
+      nguoi_dung_id,
+      hinh_id,
+      ngay_binh_luan: ngay_binh_luan2,
+      noi_dung,
+    };
+    await prisma.binh_luan.create({
+      data: newComment,
+    });
+    res.send("Create Comment Successful");
+  } catch (e) {
+    res.send(`saveComment error ${e}`);
+  }
+};
+
+export { getInfoImage, getInfoComment, getImgIsSaved, saveComment };
