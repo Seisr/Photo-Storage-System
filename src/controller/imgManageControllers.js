@@ -11,4 +11,19 @@ const getInfoUser = async (req, res) => {
   }
 };
 
-export { getInfoUser };
+const getSavedImgById = async (req, res) => {
+  try {
+    let { nguoi_dung_id } = req.params;
+    let nguoi_dung_id2 = Number(nguoi_dung_id);
+    let data = await prisma.luu_anh.findMany({
+      where: {
+        nguoi_dung_id: nguoi_dung_id2,
+      },
+    });
+    res.send(data);
+  } catch (e) {
+    res.send(`getSavedImg error ${e}`);
+  }
+};
+
+export { getInfoUser, getSavedImgById };
