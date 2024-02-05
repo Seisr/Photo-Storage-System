@@ -12,7 +12,6 @@ const getImage = async (req, res) => {
     if (!imageName) {
       imageName = "";
     }
-    // let data = await prisma.hinh_anh.findMany();
     let data = await prisma.hinh_anh.findMany({
       skip: index,
       take: num_size,
