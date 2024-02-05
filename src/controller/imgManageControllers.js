@@ -43,9 +43,17 @@ const getCreatedImgById = async (req, res) => {
 
 const deleteImgById = async (req, res) => {
   try {
+    let { imgId } = req.params;
+    let imgId2 = Number(imgId);
+    await prisma.hinh_anh.delete({
+      where: {
+        hinh_id: imgId2,
+      },
+    });
+    res.send("Delete img successful!");
   } catch (e) {
-    req.send(`deleteImgById error ${e}`);
+    res.send(`deleteImgById error ${e}`);
   }
 };
 
-export { getInfoUser, getSavedImgById, getCreatedImgById };
+export { getInfoUser, getSavedImgById, getCreatedImgById, deleteImgById };
