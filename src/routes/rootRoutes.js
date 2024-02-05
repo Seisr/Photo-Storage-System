@@ -1,5 +1,8 @@
 import express from "express";
+import homeRoutes from "./homeRoutes.js";
 
-const rootRoutes = app.Router();
+const rootRoutes = express.Router();
+
+rootRoutes.use("/home", homeRoutes);
 
 export default rootRoutes;
