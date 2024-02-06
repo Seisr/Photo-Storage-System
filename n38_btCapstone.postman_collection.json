@@ -1,0 +1,340 @@
+{
+	"info": {
+		"_postman_id": "19703815-aa2a-4846-b0b7-7ea5f39576f5",
+		"name": "n38_btCapstone",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27996085"
+	},
+	"item": [
+		{
+			"name": "sign-up",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\":\"kha50@gmail.com\",\n    \"mat_khau\":\"1234\",\n    \"ho_ten\":\"Kha Nguyen\",\n    \"tuoi\":18\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/auth/sign-up",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"auth",
+						"sign-up"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\":\"kha3@gmail.com\",\n    \"pass\":\"4321\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/auth/login",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get-image",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/home/get-image/1/2?imageName=kha.jpg",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"home",
+						"get-image",
+						"1",
+						"2"
+					],
+					"query": [
+						{
+							"key": "imageName",
+							"value": "kha.jpg"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get-info-image-by-id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/detail/get-info-image-by-id/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"detail",
+						"get-info-image-by-id",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get-info-comment-by-id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/detail/get-info-comment-by-id/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"detail",
+						"get-info-comment-by-id",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get-image-is-saved",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/detail/get-image-is-saved/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"detail",
+						"get-image-is-saved",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "save-comment",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nguoi_dung_id\":1,\n    \"hinh_id\":1,\n    \"ngay_binh_luan\":\"2024-02-05\",\n    \"noi_dung\":\"Test api\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/detail/save-comment",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"detail",
+						"save-comment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get-info-user",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/imgManage/get-info-user",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"imgManage",
+						"get-info-user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get-saved-img",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/imgManage/get-saved-img/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"imgManage",
+						"get-saved-img",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get-created-img",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuZ3VvaV9kdW5nX2lkIjozLCJlbWFpbCI6ImtoYTNAZ21haWwuY29tIiwiaWF0IjoxNzA3MTY0Mzc0LCJleHAiOjE3Mzg3MjE5NzR9.PQ2feTSKC9Vu0xNQ9x9GSDgjlu-dO7uNPcmJydABxEA",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8081/imgManage/get-created-img/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"imgManage",
+						"get-created-img",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete-img",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuZ3VvaV9kdW5nX2lkIjozLCJlbWFpbCI6ImtoYTNAZ21haWwuY29tIiwiaWF0IjoxNzA3MTY0Mzc0LCJleHAiOjE3Mzg3MjE5NzR9.PQ2feTSKC9Vu0xNQ9x9GSDgjlu-dO7uNPcmJydABxEA",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8081/imgManage/delete-img/7",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"imgManage",
+						"delete-img",
+						"7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create-img",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuZ3VvaV9kdW5nX2lkIjozLCJlbWFpbCI6ImtoYTNAZ21haWwuY29tIiwiaWF0IjoxNzA3MTY0Mzc0LCJleHAiOjE3Mzg3MjE5NzR9.PQ2feTSKC9Vu0xNQ9x9GSDgjlu-dO7uNPcmJydABxEA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"ten_hinh\":\"created img\",\n    \"duong_dan\":\"createdImg.jpg\",\n    \"mo_ta\":\"test createdImg api\",\n    \"nguoi_dung_id\":1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/uploadImg/create-img",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"uploadImg",
+						"create-img"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "edit-user",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuZ3VvaV9kdW5nX2lkIjo0LCJlbWFpbCI6ImtoYTNAZ21haWwuY29tIiwiaWF0IjoxNzA3MTYzMDM3LCJleHAiOjE3Mzg3MjA2Mzd9.03EE9IC2Aqh5_KOZ7rqdrKM9v1dYk1QP3FfzLq5xBlc",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email_change\":\"khachange@gmail.com\",\n    \"mat_khau\":\"4321\",\n    \"ho_ten\":\"Kha Changed\",\n    \"tuoi\": 81,\n    \"anh_dai_dien\":\"kha_change.jpg\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/editUser/edit",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"editUser",
+						"edit"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
